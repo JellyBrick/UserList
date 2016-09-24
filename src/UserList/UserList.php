@@ -38,9 +38,11 @@ class UserList extends PluginBase implements Listener {
 	}
        
        public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
+               $prefix = "[ 서버 ]";
                switch ($command->getName ()) {
 			case "접속자":
-				$sender->sendMessage ( Color::RED . "$prefix 당신은 OP가 아닙니다!" );
-               		$this->userList = $this->getServer ()->getOnlinePlayers ();
+               		        $this->userList = $this->getServer ()->getOnlinePlayers ();
+                                $sender->sendMessage ( Color::GOLD . "$prefix 현재 접속자 수는 " . Color::WHITE . count($this->userList) . Color::GOLD . "입니다." );
+                                $sender->sendMessage ( Color::GOLD . "=-=-=-접속자 목록-=-=-=\n" . Color::AQUA . $this->userList );
 			break;
 ?>
