@@ -1,0 +1,12 @@
+name: UserList
+main: UserList\UserList
+version: "1.0"
+author: JellyBrick
+api:
+- 1.13.0
+- 1.13.1
+- 2.0.0
+
+commands:
+ 접속자:
+  description: 접속자를 보여주는 명령어입니다.
