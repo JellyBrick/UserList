@@ -42,7 +42,15 @@ class UserList extends PluginBase implements Listener {
                switch ($command->getName ()) {
 			case "접속자":
                		        $this->userList = $this->getServer ()->getOnlinePlayers ();
-                                $sender->sendMessage ( Color::GOLD . "$prefix 현재 접속자 수는 " . Color::WHITE . count($this->userList) . Color::GOLD . "입니다." );
-                                $sender->sendMessage ( Color::GOLD . "=-=-=-접속자 목록-=-=-=\n" . Color::AQUA . $this->userList );
+                                $sender->sendMessage ( Color::GOLD . "$prefix 현재 접속자 수는 " . Color::WHITE . count($this->userList) . Color::GOLD . "명 입니다." );
+				$sender->sendMessage ( Color::GOLD . "=-=-=- 접속자 목록 -=-=-=");
+				$jupsock = "";
+				foreach ( $this->getServer ()->getOnlinePlayers () as $players ) {
+                                	$jupsock .= $players->getName() . " ";
+				}
+				$sender->sendMessage ( Color::AQUA . $jupsock );
 			break;
+		}
+	}
+}
 ?>
